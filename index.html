@@ -8,8 +8,163 @@
     <link rel="stylesheet" href="assets/css/lib/bootstrap.min.css" />
 </head>
 <body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-dark text-light">
+            <h1 class="fs-3 text-center p-2 pt-0 pb-0">Sistema de inscripción</h1>
+        </nav>
+    </header>
     <div class="container-fluid">
+        <div class="row mt-4">
+            <div class="col-6 offset-3">
+                <p id="navigationSection"><span>Datos personales</span></p>
+            </div>
+        </div>
+        <div class="row">
+            <div id="personalDataSection" class="col-6 offset-3 mb-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Datos personales</h4>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="mb-2">
+                                <label for="name" class="form-label">Nombre</label>
+                                <input id="name" type="text" class="form-control" />
+                            </div>
+                            <div class="mb-2">
+                                <label for="province" class="form-label">Provincia</label>
+                                <input id="province" type="text" class="form-control" />
+                            </div>
+                            <div class="mb-2">
+                                <label for="city" class="form-label">Ciudad</label>
+                                <input id="city" type="text" class="form-control" />
+                            </div>
+                            <div class="mb-2">
+                                <label for="sector" class="form-label">Sector</label>
+                                <input id="sector" type="text" class="form-control" />
+                            </div>
+                            <div class="mb-2">
+                                <label for="street" class="form-label">Calle</label>
+                                <input id="street" type="text" class="form-control" />
+                            </div>
+                            <div class="mb-2">
+                                <label for="career" class="form-label">Carrera</label>
+                                <select id="career" class="form-control">
+                                    <option value="">Seleccione una carrera</option>
+                                    <option value="software">Software</option>
+                                    <option value="redes">Redes</option>
+                                    <option value="multimedia">Multimedia</option>
+                                </select>
+                            </div>
+                            <div class="mb-2">
+                                <button id="registerBtn" type="button" class="btn btn-primary float-end m-1">Registrar</button>
+                                <button id="clearBtn" type="button" class="btn btn-warning float-end m-1">Limpiar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div id="inscriptionSection" class="col-6 offset-3 d-none">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Selección de materias</h4>
+                    </div>
+                    <div class="card-body">
+                        <form action="">
+                            <div id="courses">
+                                <h5 class="d-block"></h5>
+                                <div class="mb-2">
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <label><input type="radio" value="lun"/> Lun 10:00 - 12:00</label>
+                                        </div>
+                                        <div class="col-4">
+                                            <label><input type="radio" value="mar" /> Mar 19:00 - 21:00</label>
+                                        </div>
+                                        <div class="col-4">
+                                            <label><input type="radio" value="jue" /> Jue 08:00 - 10:00</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h5 class="d-block"></h5>
+                                <div class="mb-2">
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <label><input type="radio" value="lun" /> Lun 10:00 - 12:00</label>
+                                        </div>
+                                        <div class="col-4">
+                                            <label><input type="radio" value="mar" /> Mar 19:00 - 21:00</label>
+                                        </div>
+                                        <div class="col-4">
+                                            <label><input type="radio" value="jue" /> Jue 08:00 - 10:00</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h5 class="d-block"></h5>
+                                <div class="mb-2">
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <label><input type="radio" value="lun" /> Lun 10:00 - 12:00</label>
+                                        </div>
+                                        <div class="col-4">
+                                            <label><input type="radio" value="mar" /> Mar 19:00 - 21:00</label>
+                                        </div>
+                                        <div class="col-4">
+                                            <label><input type="radio" value="jue" /> Jue 08:00 - 10:00</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h5 class="d-block"></h5>
+                                <div class="mb-2">
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <label><input type="radio" value="lun" /> Lun 10:00 - 12:00</label>
+                                        </div>
+                                        <div class="col-4">
+                                            <label><input type="radio" value="mar" /> Mar 19:00 - 21:00</label>
+                                        </div>
+                                        <div class="col-4">
+                                            <label><input type="radio" value="jue" /> Jue 08:00 - 10:00</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h5 class="d-block"></h5>
+                                <div class="mb-2">
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <label><input type="radio" value="lun" /> Lun 10:00 - 12:00</label>
+                                        </div>
+                                        <div class="col-4">
+                                            <label><input type="radio" value="mar" /> Mar 19:00 - 21:00</label>
+                                        </div>
+                                        <div class="col-4">
+                                            <label><input type="radio" value="jue" /> Jue 08:00 - 10:00</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-2">
+                                <button id="acceptInscriptionBtn" type="button" class="btn btn-primary float-end">Aceptar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div id="confirmationSection" class="col-6 offset-3 d-none">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Confirmación</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-2">
+                            <button id="confirmInscriptionBtn" type="button" class="btn btn-primary float-end">Finalizar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="assets/js/index.js"></script>
+    <script src="assets/js/functionalities.js"></script>
 </body>
 </html>
