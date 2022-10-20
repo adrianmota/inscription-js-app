@@ -23,7 +23,7 @@ function main() {
 
     acceptInscriptionBtn.onclick = function () {
         const career = $('#career').val();
-        const selectedCourses = checkSelectedCourses(career);
+        const selectedCourses = getSelectedCourses(career);
         showConfirmationSection();
         showSchedule(selectedCourses);
         showPersonalData();
