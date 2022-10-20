@@ -105,7 +105,7 @@ function showSchedule(courses) {
         const tableRow = document.createElement('tr');
         const schedule = courses[i].parentElement.innerText;
 
-        tableRow.innerHTML = `<td>${courses[i].name}</td>
+        tableRow.innerHTML = `<th scope="row">${courses[i].name}</th>
                             <td></td>
                             <td></td>
                             <td></td>

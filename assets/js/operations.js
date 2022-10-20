@@ -96,7 +96,7 @@ function resetInscription() {
             resetSelectedCourses(getSelectedCourses(career));
             showPersonalDataSection();
             resetFormState(true);
-            $('#personalDataVisualization').html('');
+            $('#personalDataVisualization div.card-body').html('');
             $.notify.defaults({ globalPosition: 'bottom right' })
             $.notify('Tu selección de materias ha sido exitosa', 'success');
         }
