@@ -82,8 +82,8 @@ function validatePersonalData() {
     }
 
     if (fieldsAreNotFilled) {
-        // This alert has to be changed by a jQuery component
-        alert('Debes rellenar todos los campos');
+        $.notify.defaults({ globalPosition: 'bottom right' });
+        $.notify('Debes rellenar todos los campos', 'error');
         return fieldsAreNotFilled;
     }
 
@@ -98,6 +98,7 @@ function resetFormState(dataHasToBeCleaned = false) {
         sectorInput.value = '';
         streetInput.value = '';
         careerSelect.value = '';
+        nameInput.focus();
     }
 
     nameInput.classList.remove('border-success', 'border-danger');
@@ -105,7 +106,7 @@ function resetFormState(dataHasToBeCleaned = false) {
     cityInput.classList.remove('border-success', 'border-danger');
     sectorInput.classList.remove('border-success', 'border-danger');
     streetInput.classList.remove('border-success', 'border-danger');
-    careerSelect.classList.remove('border-success', 'border-danger');
+    careerSelect.classList.remove('border-success', 'border-danger');    
 }
 
 function showPersonalDataSection() {
@@ -183,7 +184,7 @@ function showPersonalData() {
         <p><strong>Sector:</strong> ${sectorInput.value}</p>
         <p><strong>Calle:</strong> ${streetInput.value}</p>
         <p><strong>Carrera:</strong> ${careerSelect.value.charAt(0).toUpperCase() + careerSelect.value.slice(1)}</p>
-    `
+    `;
 }
 
 function showSchedule(courses) {
@@ -237,6 +238,27 @@ function showSchedule(courses) {
     }
 }
 
+function resetSelectedCourses(selectedCourses) {
+    if (selectedCourses.length != 0) {
+        for (const course of selectedCourses) {
+            course.checked = false;
+        }
+    }
+}
+
+function resetInscription() {
+    bootbox.confirm('¿Estás de acuerdo en confirmar tu selección?', function (result) {
+        if (result) {
+            const career = $('#career').val();
+            resetFormState(true);
+            resetSelectedCourses(checkSelectedCourses(career));
+            showPersonalDataSection();
+            $.notify.defaults({ globalPosition: 'bottom right' })
+            $.notify('Tu selección de materias ha sido exitosa', 'success');
+        }
+    });
+}
+
 // sectionOption corresponds to the position of the section
 function changeNavigationBetweenSections(sectionOption) {
     const sections = {
@@ -249,6 +271,7 @@ function changeNavigationBetweenSections(sectionOption) {
 
     if (sections[sectionOption] == 'personalData') {
         navigationSection.innerHTML = '<span>Datos personales</span>';
+        resetSelectedCourses(checkSelectedCourses($('#career').val()));
     } else if (sections[sectionOption] == 'inscription') {
         navigationSection.innerHTML = '';
         
@@ -259,11 +282,9 @@ function changeNavigationBetweenSections(sectionOption) {
         personalDataSpan.innerText = 'Datos personales';
 
         navigationSection.appendChild(personalDataSpan);
-        navigationSection.innerHTML += ' > <span>Inscripcion</span>';
-        
-        navigationSection.children[0].onclick = function () {
-            showPersonalDataSection();
-        }
+        navigationSection.innerHTML += ' > <span>Selección de materias</span>';
+
+        navigationSection.firstChild.onclick = showPersonalDataSection;
     } else if (sections[sectionOption] == 'confirmation') {
         navigationSection.innerHTML += ' > <span>Confirmación</span>';
 
@@ -272,12 +293,7 @@ function changeNavigationBetweenSections(sectionOption) {
         inscriptionSpan.style.textDecoration = 'underline';
         inscriptionSpan.style.cursor = 'pointer';
 
-        navigationSection.children[0].onclick = function () {
-            showPersonalDataSection();
-        }
-
-        navigationSection.children[1].onclick = function () {
-            showInscriptionSection();
-        }
+        navigationSection.firstChild.onclick = showPersonalDataSection;
+        inscriptionSpan.onclick = showInscriptionSection;
     }
 }

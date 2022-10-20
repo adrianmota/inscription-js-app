@@ -5,10 +5,10 @@ function main() {
     const confirmInscriptionBtn = document.getElementById('confirmInscriptionBtn');
 
     let personalDataIsNotCompleted = false;
-    
+
     registerBtn.onclick = function () {
         personalDataIsNotCompleted = validatePersonalData();
-        
+
         if (personalDataIsNotCompleted) {
             return;
         }
@@ -24,15 +24,12 @@ function main() {
     acceptInscriptionBtn.onclick = function () {
         const career = $('#career').val();
         const selectedCourses = checkSelectedCourses(career);
-
-        showConfirmationSection();        
+        showConfirmationSection();
         showSchedule(selectedCourses);
         showPersonalData();
     }
 
-    confirmInscriptionBtn.onclick = function () {
-        console.log('Inscripcion confirmada');
-    }
+    confirmInscriptionBtn.onclick = resetInscription;
 }
 
 document.addEventListener('DOMContentLoaded', function () {
