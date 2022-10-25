@@ -24,6 +24,13 @@ function resetFormState(dataHasToBeCleaned = false) {
     const streetInput = document.getElementById('street');
     const careerSelect = document.getElementById('career');
 
+    nameInput.classList.remove('border-success', 'border-danger');
+    provinceInput.classList.remove('border-success', 'border-danger');
+    cityInput.classList.remove('border-success', 'border-danger');
+    sectorInput.classList.remove('border-success', 'border-danger');
+    streetInput.classList.remove('border-success', 'border-danger');
+    careerSelect.classList.remove('border-success', 'border-danger');
+    
     if (dataHasToBeCleaned) {
         nameInput.value = '';
         provinceInput.value = '';
@@ -33,13 +40,6 @@ function resetFormState(dataHasToBeCleaned = false) {
         careerSelect.value = '';
         nameInput.focus();
     }
-
-    nameInput.classList.remove('border-success', 'border-danger');
-    provinceInput.classList.remove('border-success', 'border-danger');
-    cityInput.classList.remove('border-success', 'border-danger');
-    sectorInput.classList.remove('border-success', 'border-danger');
-    streetInput.classList.remove('border-success', 'border-danger');
-    careerSelect.classList.remove('border-success', 'border-danger');
 }
 
 function setCourses() {

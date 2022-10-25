@@ -4,10 +4,8 @@ function main() {
     const acceptInscriptionBtn = document.getElementById('acceptInscriptionBtn');
     const confirmInscriptionBtn = document.getElementById('confirmInscriptionBtn');
 
-    let personalDataIsNotCompleted = false;
-
     registerBtn.onclick = function () {
-        personalDataIsNotCompleted = validatePersonalData();
+        let personalDataIsNotCompleted = validatePersonalData();
 
         if (personalDataIsNotCompleted) {
             return;
