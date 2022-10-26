@@ -1,7 +1,8 @@
+const personalDataSection = document.getElementById('personalDataSection');
+const inscriptionSection = document.getElementById('inscriptionSection');
+const confirmationSection = document.getElementById('confirmationSection');
+
 function showPersonalDataSection() {
-    const personalDataSection = document.getElementById('personalDataSection');
-    const inscriptionSection = document.getElementById('inscriptionSection');
-    const confirmationSection = document.getElementById('confirmationSection');
     inscriptionSection.classList.add('d-none');
     confirmationSection.classList.add('d-none');
     personalDataSection.classList.remove('d-none');
@@ -10,9 +11,6 @@ function showPersonalDataSection() {
 }
 
 function showInscriptionSection() {
-    const personalDataSection = document.getElementById('personalDataSection');
-    const inscriptionSection = document.getElementById('inscriptionSection');
-    const confirmationSection = document.getElementById('confirmationSection');
     personalDataSection.classList.add('d-none');
     confirmationSection.classList.add('d-none');
     inscriptionSection.classList.remove('d-none');
@@ -20,9 +18,6 @@ function showInscriptionSection() {
 }
 
 function showConfirmationSection() {
-    const personalDataSection = document.getElementById('personalDataSection');
-    const inscriptionSection = document.getElementById('inscriptionSection');
-    const confirmationSection = document.getElementById('confirmationSection');
     personalDataSection.classList.add('d-none');
     inscriptionSection.classList.add('d-none');
     confirmationSection.classList.remove('d-none');

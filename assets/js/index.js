@@ -1,4 +1,4 @@
-function main() {
+document.addEventListener('DOMContentLoaded', function () {
     const registerBtn = document.getElementById('registerBtn');
     const clearBtn = document.getElementById('clearBtn');
     const acceptInscriptionBtn = document.getElementById('acceptInscriptionBtn');
@@ -13,11 +13,11 @@ function main() {
 
         showInscriptionSection();
         setCourses();
-    };
+    }
 
     clearBtn.onclick = function () {
         resetFormState(true);
-    };
+    }
 
     acceptInscriptionBtn.onclick = function () {
         const career = $('#career').val();
@@ -28,8 +28,4 @@ function main() {
     }
 
     confirmInscriptionBtn.onclick = resetInscription;
-}
-
-document.addEventListener('DOMContentLoaded', function () {
-    main();
 });

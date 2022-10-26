@@ -8,7 +8,7 @@ function validatePersonalData() {
 
     let fieldsAreNotFilled = false;
 
-    if (!nameInput.value || nameInput.value == '' || nameInput.value == null) {
+    if (!nameInput.value) {
         nameInput.classList.remove('border-success');
         nameInput.classList.add('border-danger');
         fieldsAreNotFilled = true;
@@ -17,7 +17,7 @@ function validatePersonalData() {
         nameInput.classList.add('border-success');
     }
 
-    if (!provinceInput.value || provinceInput.value == '' || provinceInput.value == null) {
+    if (!provinceInput.value) {
         provinceInput.classList.remove('border-success');
         provinceInput.classList.add('border-danger');
         fieldsAreNotFilled = true;
@@ -26,7 +26,7 @@ function validatePersonalData() {
         provinceInput.classList.add('border-success');
     }
 
-    if (!cityInput.value || cityInput.value == '' || cityInput.value == null) {
+    if (!cityInput.value) {
         cityInput.classList.remove('border-success');
         cityInput.classList.add('border-danger');
         fieldsAreNotFilled = true;
@@ -35,7 +35,7 @@ function validatePersonalData() {
         cityInput.classList.add('border-success');
     }
 
-    if (!sectorInput.value || sectorInput.value == '' || sectorInput.value == null) {
+    if (!sectorInput.value) {
         sectorInput.classList.remove('border-success');
         sectorInput.classList.add('border-danger');
         fieldsAreNotFilled = true;
@@ -44,7 +44,7 @@ function validatePersonalData() {
         sectorInput.classList.add('border-success');
     }
 
-    if (!streetInput.value || streetInput.value == '' || streetInput.value == null) {
+    if (!streetInput.value) {
         streetInput.classList.remove('border-success');
         streetInput.classList.add('border-danger');
         fieldsAreNotFilled = true;
@@ -53,7 +53,7 @@ function validatePersonalData() {
         streetInput.classList.add('border-success');
     }
 
-    if (!careerSelect.value || careerSelect.value == '' || careerSelect.value == null) {
+    if (!careerSelect.value) {
         careerSelect.classList.remove('border-success');
         careerSelect.classList.add('border-danger');
         fieldsAreNotFilled = true;

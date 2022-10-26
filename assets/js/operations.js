@@ -73,8 +73,9 @@ function getSelectedCourses(career) {
     for (let i = 0; i < careerSpecificCourses.length; i++) {
         const radioButtons = document.getElementsByName(careerSpecificCourses[i]);
         for (const radioButton of radioButtons) {
-            if (radioButton.checked)
-                selectedCourses.push(radioButton);
+            if (!radioButton.checked) continue;
+
+            selectedCourses.push(radioButton);
         }
     }
 
@@ -91,14 +92,14 @@ function resetSelectedCourses(selectedCourses) {
 
 function resetInscription() {
     bootbox.confirm('¿Estás de acuerdo en confirmar tu selección?', function (result) {
-        if (result) {
-            const career = $('#career').val();
-            resetSelectedCourses(getSelectedCourses(career));
-            showPersonalDataSection();
-            resetFormState(true);
-            $('#personalDataVisualization div.card-body').html('');
-            $.notify.defaults({ globalPosition: 'bottom right' })
-            $.notify('Tu selección de materias ha sido exitosa', 'success');
-        }
+        if (!result) return;
+        
+        const career = $('#career').val();
+        resetSelectedCourses(getSelectedCourses(career));
+        showPersonalDataSection();
+        resetFormState(true);
+        $('#personalDataVisualization div.card-body').html('');
+        $.notify.defaults({ globalPosition: 'bottom right' })
+        $.notify('Tu selección de materias ha sido exitosa', 'success');
     });
 }
