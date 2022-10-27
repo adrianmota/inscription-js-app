@@ -7,9 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
     registerBtn.onclick = function () {
         let personalDataIsNotCompleted = validatePersonalData();
 
-        if (personalDataIsNotCompleted) {
-            return;
-        }
+        if (personalDataIsNotCompleted) return;
 
         showInscriptionSection();
         setCourses();

@@ -47,31 +47,29 @@ function setCourses() {
     const coursesView = document.getElementById('courses');
     const coursesTitles = coursesView.getElementsByTagName('h5');
 
-    for (let i = 0; i < coursesTitles.length; i++) {
+    for (let i = 0; i < coursesTitles.length; i++)
         coursesTitles[i].innerText = courses[career][i];
-    }
 
     const coursesDivs = coursesView.getElementsByClassName('mb-2');
 
     for (let i = 0; i < coursesDivs.length; i++) {
         const radioButtons = coursesDivs[i].getElementsByTagName('input');
 
-        for (const radioButton of radioButtons) {
+        for (const radioButton of radioButtons)
             radioButton.setAttribute('name', coursesTitles[i].innerText);
-        }
     }
 }
 
 function getSelectedCourses(career) {
     const careerSpecificCourses = courses[career];
     
-    if (!careerSpecificCourses) {
+    if (!careerSpecificCourses)
         return [];
-    }
     
     const selectedCourses = [];
     for (let i = 0; i < careerSpecificCourses.length; i++) {
         const radioButtons = document.getElementsByName(careerSpecificCourses[i]);
+        
         for (const radioButton of radioButtons) {
             if (!radioButton.checked) continue;
 
@@ -83,11 +81,10 @@ function getSelectedCourses(career) {
 }
 
 function resetSelectedCourses(selectedCourses) {
-    if (selectedCourses.length != 0) {
-        for (const course of selectedCourses) {
-            course.checked = false;
-        }
-    }
+    if (!(selectedCourses.length != 0)) return;
+
+    for (const course of selectedCourses)
+        course.checked = false;
 }
 
 function resetInscription() {
